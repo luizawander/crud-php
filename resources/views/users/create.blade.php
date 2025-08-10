@@ -11,13 +11,12 @@
 
     <h2>Cadastrar Usuário</h2>
 
-    @if ($errors->any()){
+    @if ($errors->any())
         <p style="color: red;">
             @foreach ($errors->all() as $error)
                 {{ $error }} <br>
             @endforeach
         </p>
-        }
     @endif
 
     <form action="{{ route('users.store') }}" method="POST">
@@ -32,6 +31,9 @@
 
         <label for="password">Senha:</label>
         <input type="password" name="password" placeholder="Senha"> <br>
+
+        <label for="password_confirmation">Confirmação de Senha:</label>
+        <input type="password" name="password_confirmation" placeholder="Confirmação de Senha"> <br>
 
         <button type="submit">Cadastrar</button>
     </form>
